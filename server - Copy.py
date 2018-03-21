@@ -50,7 +50,7 @@ engine.execute("""CREATE TABLE IF NOT EXISTS test (
   id serial,
   name text
 );""")
-#engine.execute("""INSERT INTO test(name) VALUES ('Alex B'), ('Shreya V'), ('Eric B');""")
+engine.execute("""INSERT INTO test(name) VALUES ('Pankhuri Kumar'), ('Shreya Vaidyanathan'), ('ada lovelace');""")
 
 
 @app.before_request
@@ -80,15 +80,7 @@ def teardown_request(exception):
   except Exception as e:
     pass
 
-# @app.route('/')
-# def mainpage():
-# 	return render_template("mainpage.html")
 
-
-@app.route('/')
-def mainpage():
-  return render_template("landing.html")
-  
 #
 # @app.route is a decorator around index() that means:
 #   run index() whenever the user tries to access the "/" path using a GET request
@@ -102,7 +94,7 @@ def mainpage():
 # see for routing: http://flask.pocoo.org/docs/0.10/quickstart/#routing
 # see for decorators: http://simeonfranklin.com/blog/2012/jul/1/python-decorators-in-12-steps/
 #
-@app.route('/index')
+@app.route('/')
 def index():
   """
   request is a special object that Flask provides to access web request information:
@@ -155,6 +147,7 @@ def index():
   #
   context = dict(data = names)
 
+
   #
   # render_template looks in the templates/ folder for files.
   # for example, the below file reads template/index.html
@@ -178,8 +171,8 @@ def another():
 @app.route('/add', methods=['POST'])
 def add():
   name = request.form['name']
-  g.conn.execute('INSERT INTO test(name) VALUES (%s)', (name))
-  return redirect('/index')
+  g.conn.execute('INSERT INTO test VALUES (NULL, ?)', name)
+  return redirect('/')
 
 
 @app.route('/login')
@@ -195,7 +188,7 @@ if __name__ == "__main__":
   @click.option('--debug', is_flag=True)
   @click.option('--threaded', is_flag=True)
   @click.argument('HOST', default='0.0.0.0')
-  @click.argument('PORT', default=8110, type=int)
+  @click.argument('PORT', default=8111, type=int)
   def run(debug, threaded, host, port):
     """
     This function handles command line parameters.
