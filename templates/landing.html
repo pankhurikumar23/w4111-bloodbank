@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>COMS W4111</title>
+    <title>COMS W4111 - Blood Bank</title>
 
     <!-- Bootstrap core CSS
     <link href="/templates/css/bootstrap.min.css" rel="stylesheet">
@@ -57,11 +57,12 @@
         <div class="col-lg-12 text-center">
           <h1 class="mt-5">w4111 - Blood Donation Manager</h1>
           <p class="lead">Control and manage the amount of blood in your city!</p>
-            <p class="lead">Please enter your name: <input type="text" name="name"></p>
-            <form method="POST" action="/searchUser">
+            <form method="GET" action="/searchUser">
+                <p class="lead">Please enter your ID: <input type="text" name="id"></p>
                 <p><input type="submit" value="I'm a Donor/Recipient"></p>
             </form>
-            <form method="POST" action="/searchAdmin">
+            <form method="GET" action="/searchAdmin">
+                <p class="lead">Please enter your ID: <input type="text" name="id"></p>
                 <p><input type="submit" value="I'm an Administrator"></p>
             </form>
         </div>

@@ -180,8 +180,8 @@ def add():
 
 @app.route('/searchUser', methods=['GET'])
 def searchUser():
-  name = request.form['name']
-  cursor = g.conn.execute("SELECT * FROM donors WHERE donor.")
+  id = request.form['id']
+  cursor = g.conn.execute("SELECT * FROM donors WHERE donor.donorID = %s", id)
 
 # @app.route('/login')
 # def login():
