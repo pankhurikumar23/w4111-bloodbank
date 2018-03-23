@@ -46,10 +46,10 @@ engine = create_engine(DATABASEURI)
 # Example of running queries in your database
 # Note that this will probably not work if you already have a table named 'test' in your database, containing meaningful data. This is only an example showing you how to run queries in your database using SQLAlchemy.
 #
-engine.execute("""CREATE TABLE IF NOT EXISTS test (
-  id serial,
-  name text
-);""")
+# engine.execute("""CREATE TABLE IF NOT EXISTS test (
+#   id serial,
+#   name text
+# );""")
 #engine.execute("""INSERT INTO test(name) VALUES ('Alex B'), ('Shreya V'), ('Eric B');""")
 
 
@@ -80,13 +80,9 @@ def teardown_request(exception):
   except Exception as e:
     pass
 
-# @app.route('/')
-# def mainpage():
-# 	return render_template("mainpage.html")
-
 
 @app.route('/')
-def mainpage():
+def landing():
   return render_template("landing.html")
   
 #
@@ -182,10 +178,15 @@ def add():
   return redirect('/index')
 
 
-@app.route('/login')
-def login():
-    abort(401)
-    this_is_never_executed()
+@app.route('/searchUser', methods=['GET'])
+def searchUser():
+  name = request.form['name']
+  cursor = g.conn.execute("SELECT * FROM donors WHERE donor.")
+
+# @app.route('/login')
+# def login():
+#     abort(401)
+#     this_is_never_executed()
 
 
 if __name__ == "__main__":
@@ -195,7 +196,7 @@ if __name__ == "__main__":
   @click.option('--debug', is_flag=True)
   @click.option('--threaded', is_flag=True)
   @click.argument('HOST', default='0.0.0.0')
-  @click.argument('PORT', default=8110, type=int)
+  @click.argument('PORT', default=8111, type=int)
   def run(debug, threaded, host, port):
     """
     This function handles command line parameters.
