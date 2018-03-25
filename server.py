@@ -84,7 +84,29 @@ def teardown_request(exception):
 @app.route('/')
 def landing():
   return render_template("landing.html")
-  
+
+#Page for Donors and Recepients
+@app.route('/Users')
+def donorRecepient():
+  return render_template("searchUser.html")
+
+#Landing page for all administrators 
+@app.route('/searchAdmin')
+def searchAdmin():
+  return render_template("searchAdmin.html")
+
+#Page for Blood bank administrator
+@app.route('/bbAdmin')
+def bloodbankAdmin():
+  return render_template("searchBB.html")    
+
+#Page for Hospital Administrator
+@app.route('/hospiAdmin')
+def hospiAdmin():
+  return render_template("searchHA.html")
+
+
+
 #
 # @app.route is a decorator around index() that means:
 #   run index() whenever the user tries to access the "/" path using a GET request
@@ -187,7 +209,6 @@ def searchUser():
 # def login():
 #     abort(401)
 #     this_is_never_executed()
-
 
 if __name__ == "__main__":
   import click

@@ -55,29 +55,30 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-12 text-center">
-          <h1 class="mt-5">w4111 - Blood Donation Manager</h1>
-          <p class="lead">Control and manage the amount of blood in your city!</p>
-            <br>
+          <h2 class="mt-5">w4111 - Blood Donation Manager</h2>
+          <p class="lead">I'm a hospital Administrator. I can choose and query the database accordingly then: </p>
             <form method="GET" action="/searchUser">
+                <p class="lead">  Enter the following : <br>
+                Today's Date:<input type="Date" name="id"></p>
+                <p class="lead">Hospital ID: <input type="text" name="id"></p>
+                <p class="lead">Department ID: <input type="text" name="did"></p>
+                <p class="lead">Recepient ID: <input type="text" name="did"></p>
+                <p class="lead">No. of Units: <input type="number" name="did"></p>  
+                <!-- Drop down list of possible queries? -->
+                Choose the operation/query you want: <br>               
                 <p>
-                <input type="submit" value="I'm a Donor/Recipient">
-                <br> <br> <br>
-                <input type="submit" value="I'm an Administrator">
+                  <input type="submit" value="Check Availability">
+                  <input type="submit" value="Get Status">
                 </p>
             </form>
-            </div>
-          </div>
         </div>
-
-
-        <footer>
         <div class="col-lg-12 text-center">
             <ul class="list-unstyled">
                 <li>Shreya Vaidyanathan and Pankhuri Kumar © 2018.</li>
             </ul>
         </div>
-      </footer>
-      
+      </div>
+    </div>
   </body>
 
 </html>
