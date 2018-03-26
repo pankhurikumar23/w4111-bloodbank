@@ -10,9 +10,9 @@ Implemented the overall aim that we set out with. We have also tried to impement
   * Functionality and database support for the four different user personas or use-cases of the application -- (Donor/Recipient/Hospital Admin/ Blood Bank Administrator) <br>
   * Displaying information pertaining to individual patients receiving blood.  <br>
   * Displaying information pertaining to individual blood donors.  <br>
-  * Ability to add new blood donors to the existing database in the 'searchUser.html' page. <br>
-   * Ability to register a new patient as a blood recipient in the admin page of the hospital (and not in the blood bank).
-  * Ability to query the details about any blood units in hospitals and bloodbanks (only available if admin) <br>
+  * Ability to add new blood donors to the existing database. <br>
+   * Ability to register a new patient as a blood recipient in the admin page of the hospital.
+  * Ability to query the details about any blood units in hospitals (only available if admin) <br>
   * Ability to query availability of blood for new patient in any department of the hospital <br>
   
  *Few things we would like to improve further:-* (which we believe are currently beyond the scope of this project)
