@@ -98,10 +98,29 @@ def add():
   return redirect('/index')
 
 
-@app.route('/searchUser', methods=['GET'])
+@app.route('/searchUser', methods=['POST'])
 def searchUser():
-  id = request.form['id']
-  cursor = g.conn.execute("SELECT * FROM donors WHERE donor.donorID = %s", id)
+  id = request.form['name']
+  cursor1 = g.conn.execute("SELECT * FROM donor WHERE donorID = %s;", id)
+  # cursor2 = g.conn.execute("SELECT * FROM recipient WHERE recipientID = %s;", id)
+  results1 = []
+  results2 = []
+  for result in cursor1:
+    results1.append(result['name'])  # can also be accessed using result[0]
+  cursor1.close()
+
+  # for result in cursor2:
+  #   results2.append(result['name'])  # can also be accessed using result[0]
+  # cursor2.close()
+
+  # if results1 == []:
+  #   context = dict(data = results1)
+  # else:
+  #   context = dict(data = results2)
+  context = dict(data=results1)
+
+  return render_template("index.html", **context)
+
 
 
 if __name__ == "__main__":
