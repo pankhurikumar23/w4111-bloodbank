@@ -43,7 +43,7 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="#">Home
+              <a class="nav-link" href="/">Home
                 <span class="sr-only">(current)</span>
               </a>
           </ul>
@@ -59,11 +59,11 @@
           <p class="lead">I'm a hospital Administrator. I can choose and query the database accordingly then: </p>
             <form method="GET" action="/searchUser">
                 <p class="lead">  Enter the following : <br>
-                Today's Date:<input type="Date" name="id"></p>
-                <p class="lead">Hospital ID: <input type="text" name="id"></p>
+                Today's Date:<input type="Date" name="date"></p>
+                <p class="lead">Hospital ID: <input type="text" name="hid"></p>
                 <p class="lead">Department ID: <input type="text" name="did"></p>
-                <p class="lead">Recepient ID: <input type="text" name="did"></p>
-                <p class="lead">No. of Units: <input type="number" name="did"></p>  
+                <p class="lead">Recipient ID: <input type="text" name="rid"></p>
+                <p class="lead">No. of Units: <input type="number" name="units"></p>  
                 <!-- Drop down list of possible queries? -->
                 Choose the operation/query you want: <br>               
                 <p>
@@ -71,6 +71,13 @@
                   <input type="submit" value="Get Status">
                 </p>
             </form>
+            <br>
+            <p class="lead">
+            Results: <br>
+            <textarea name="results" rows="10" cols="50">
+            (query results will be displayed here)
+            </textarea>
+            </p>  
         </div>
         <div class="col-lg-12 text-center">
             <ul class="list-unstyled">

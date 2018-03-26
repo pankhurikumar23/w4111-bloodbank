@@ -36,14 +36,14 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
       <div class="container">
-        <a class="navbar-brand" href="#">Blood Donations</a>
+        <a class="navbar-brand" href="/">Blood Donations</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="#">Home
+              <a class="nav-link" href="/">Home
                 <span class="sr-only">(current)</span>
               </a>
           </ul>
@@ -58,10 +58,22 @@
           <h2 class="mt-5">w4111 - Blood Donation Manager</h2>
           <p class="lead">Control and manage the amount of blood in your city!</p>
 
-            <form method="POST" action="/searchUser">
-                <p class="lead">Please enter your Donor/Recipient ID:<input type="text" name="name"></p>
+            <form method="GET" action="/searchUser">
+                <p class="lead">Are you a:
+                <select name="usertype">
+                    <option value="donor">Donor</option>
+                    <option value="recipient">Recipient</option>
+                </select>
+                <p class="lead">Enter your Donor/Recipient ID:<input type="text" name="name"></p>
                 <p><input type="submit" value="Go!"></p>
+                <br> <br> <br>
             </form>
+            <p class="lead">
+            Results: <br>
+            <textarea name="results" rows="4" cols="50">
+            (query results will be displayed here)
+            </textarea>
+            </p>
           </div>
         </div>
       </div>
