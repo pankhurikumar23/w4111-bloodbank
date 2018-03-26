@@ -63,6 +63,20 @@
                 Employee ID: <input type="text" name="eid"></p>
                 <p><input type="submit" value="GO."></p>
             </form>
+            <form method="POST" action="/addDonor">
+                <p class="lead"> Enter the following : <br>
+                    ID: <input type="text" name="did">
+                    Name: <input type="text" name="name">
+                    Blood type: <input type="text" name="bloodtype">
+                    Address: <input type="text" name="address">
+                    Phone: <input type="text" name="phone">
+                    <select name="usertype">
+                        <option value="donor">Donor</option>
+                        <option value="recipient">Recipient</option>
+                    </select>
+                </p>
+                <p><input type="submit" value="Add"></p>
+            </form>
         </div>
         <div class="col-lg-12 text-center">
             <ul class="list-unstyled">

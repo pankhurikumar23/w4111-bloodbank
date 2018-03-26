@@ -87,12 +87,26 @@ def another():
 
 
 # Example of adding new data to the database
-@app.route('/add', methods=['POST'])
+@app.route('/addDonor', methods=['POST'])
 def add():
   name = request.form['name']
-  g.conn.execute('INSERT INTO test(name) VALUES (%s)', (name))
-  return redirect('/index')
+  id = request.form['did']
+  bloodtype = request.form['bloodtype']
+  address = request.form['address']
+  phone = request.form['phone']
+  userType = request.form['usertype']
+  if userType == 'donor':
+    g.conn.execute('INSERT INTO donor(name, donorID, bloodType, address, phone) VALUES (%s, %s, %s, %s, %s)', (name, id, bloodtype, address, phone))
+  else:
+    g.conn.execute('INSERT INTO recipients(name, recipientID, bloodType, address, phone) VALUES (%s, %s, %s, %s, %s)',
+                   (name, id, bloodtype, address, phone))
 
+  return render_template("searchAdmin.html")
+
+
+@app.route('/Users')
+def user():
+  return render_template("searchUser.html")
 
 @app.route('/searchUser')
 def searchUser():
