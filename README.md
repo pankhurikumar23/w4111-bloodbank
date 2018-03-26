@@ -20,9 +20,11 @@ Implemented the overall aim that we set out with. We have also tried to impement
  * Optimizing which hospital or department receives blood on some order of priority. 
 
 * *Two interesting web pages* - <br>
-  * searchUser.html - Provides details pertaining to any donor or recipient.
-  * searchAdmin.html - Provides in-depth information about the availability of blood for new patient in any department of the hospital 
-
+  * searchUser.html - Provides details pertaining to any donor or recipient. Lets a user query their past donations, date, units, 
+  * searchAdmin.html - Provides in-depth information about the availability of blood in the entire system.
+       * - Lets admin at hospital look at the list of available blood, blood type, units etc.
+       * - Lets admin at hospital ad new requets for a department requiring blood of any type at the particular hospital for patient.
+       * - Lets admin at blood bank query the blood availablity in their blood bank, other blood banks in the system and add new donations (for existing donors and also add new donors to the working database list.)
 
 _Commit log_:
  - Add Button Working
@@ -31,3 +33,5 @@ _Commit log_:
  - Multiple pages created for different users
  - Querying DB through flask
  - Displaying results on textarea in jinja templates
+ - Adding queries
+ - Adding new page for displaying final results
