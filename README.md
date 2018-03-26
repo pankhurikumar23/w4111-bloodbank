@@ -13,7 +13,8 @@ Implemented the overall aim that we set out with. We have also tried to impement
   * Ability to add new blood donors to the existing database. <br>
   * Ability to register a new patient as a blood recipient in the admin page of the hospital.
   * Ability to query the details about any blood units in hospitals (only available if admin) <br>
-  * Ability to query availability of blood for new patient in any department of the hospital <br>
+  * Ability to query availability of blood for a recipient in any department of the hospital <br>
+  * Ability to query the history of transfusions for a recipient in a particular hospital. <br>
   
  *Few things we would like to improve further:-* (which we believe are currently beyond the scope of this project)
  * To query the availability of blood levels with a limit on certain rare blood types like (AB-ve) and some other ones that are low in units at all the banks and hospitals.
