@@ -71,7 +71,9 @@
             <p class="lead">
             Results: <br>
             <textarea name="results" rows="4" cols="50">
-            (query results will be displayed here)
+                {% for n in data %}
+                    {{n}}
+                {% endfor %}
             </textarea>
             </p>
           </div>

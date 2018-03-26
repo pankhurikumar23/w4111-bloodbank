@@ -98,28 +98,25 @@ def add():
   return redirect('/index')
 
 
-@app.route('/searchUser', methods=['POST'])
+@app.route('/searchUser')
 def searchUser():
-  id = request.form['name']
-  cursor1 = g.conn.execute("SELECT * FROM donor WHERE donorID = %s;", id)
-  # cursor2 = g.conn.execute("SELECT * FROM recipient WHERE recipientID = %s;", id)
-  results1 = []
-  results2 = []
-  for result in cursor1:
-    results1.append(result['name'])  # can also be accessed using result[0]
-  cursor1.close()
+  userType = request.args['usertype']
+  id = request.args['name']
+  if userType == 'donor':
+    cursor = g.conn.execute("SELECT * FROM donor WHERE donorID = %s;", id)
+  else:
+    cursor = g.conn.execute("SELECT * FROM recipients WHERE recipientID = %s;", id)
+  results = []
+  for result in cursor:
+    newRow = []
+    for item in result:
+      newRow.append(item)
+    results.append(newRow)  # can also be accessed using result[0]
+  cursor.close()
 
-  # for result in cursor2:
-  #   results2.append(result['name'])  # can also be accessed using result[0]
-  # cursor2.close()
+  context = dict(data=results)
 
-  # if results1 == []:
-  #   context = dict(data = results1)
-  # else:
-  #   context = dict(data = results2)
-  context = dict(data=results1)
-
-  return render_template("index.html", **context)
+  return render_template("searchUser.html", **context)
 
 
 
@@ -135,6 +132,5 @@ if __name__ == "__main__":
     HOST, PORT = host, port
     print "running on %s:%d" % (HOST, PORT)
     app.run(host=HOST, port=PORT, debug=debug, threaded=threaded)
-
 
   run()
