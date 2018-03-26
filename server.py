@@ -49,25 +49,21 @@ def teardown_request(exception):
 def landing():
   return render_template("landing.html")
 
-#Page for Donors and Recepients
-@app.route('/Users')
-def donorRecepient():
-  return render_template("searchUser.html")
-
-#Landing page for all administrators 
-@app.route('/searchAdmin')
-def searchAdmin():
-  return render_template("searchAdmin.html")
-
-#Page for Blood bank administrator
-@app.route('/bbAdmin')
-def bloodbankAdmin():
-  return render_template("searchBB.html")    
-
 #Page for Hospital Administrator
-@app.route('/hospiAdmin')
+@app.route('/searchHA')
 def hospiAdmin():
-  return render_template("searchHA.html")
+  id = request.args['eid']
+  cursor = g.conn.execute("SELECT * FROM hospitaldept where employeeid = %s;", id)
+  results = []
+  results.append("Hospital Dept. details: ")
+  for result in cursor:
+    hID = result[0]
+    dID = result[1]
+    results.append(result)
+  cursor.close()
+
+  context = dict(data=results)
+  return render_template("searchHA.html", **context)
 
 
 
@@ -103,22 +99,34 @@ def searchUser():
   userType = request.args['usertype']
   id = request.args['name']
   if userType == 'donor':
-    cursor = g.conn.execute("SELECT * FROM donor WHERE donorID = %s;", id)
+    cursor1 = g.conn.execute("SELECT * FROM donor WHERE donorID = %s;", id)
+    cursor2 = g.conn.execute("SELECT donationID, unitsDonated, institutionID, date FROM donor d1, donations d2 WHERE d1.donorID = d2.donorID AND d1.donorID = %s;", id)
   else:
-    cursor = g.conn.execute("SELECT * FROM recipients WHERE recipientID = %s;", id)
+    cursor1 = g.conn.execute("SELECT * FROM recipients WHERE recipientID = %s;", id)
+    cursor2 = g.conn.execute("SELECT transfusionID, unitsTransfused, hospitalID, date FROM recipients R, transfusions T WHERE R.recipientID = T.recipientID AND R.recipientID = %s;", id)
   results = []
-  for result in cursor:
+  for result in cursor1:
+    newRow = []
+    for item in result:
+      newRow.append(item)
+    results.append(newRow) # can also be accessed using result[0]
+  cursor1.close()
+  results.append("Donations Given/Transfusions Received: ")
+  for result in cursor2:
     newRow = []
     for item in result:
       newRow.append(item)
     results.append(newRow)  # can also be accessed using result[0]
-  cursor.close()
+  cursor2.close()
 
   context = dict(data=results)
 
   return render_template("searchUser.html", **context)
 
-
+#Landing page for all administrators
+@app.route('/searchAdmin')
+def searchAdmin():
+  return render_template("searchAdmin.html")
 
 if __name__ == "__main__":
   import click
