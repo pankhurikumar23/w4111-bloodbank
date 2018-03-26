@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="08ff2202-f3da-4301-90bd-f7f892006527" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/server - Copy.py" afterPath="" />
       <change beforePath="$PROJECT_DIR$/server.py" afterPath="$PROJECT_DIR$/server.py" />
-      <change beforePath="$PROJECT_DIR$/templates/searchAdmin.html" afterPath="$PROJECT_DIR$/templates/searchAdmin.html" />
+      <change beforePath="$PROJECT_DIR$/templates/searchHA.html" afterPath="$PROJECT_DIR$/templates/searchHA.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -16,20 +14,25 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="server.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="server.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="414">
-              <caret line="102" column="0" lean-forward="true" selection-start-line="102" selection-start-column="0" selection-end-line="102" selection-end-column="0" />
+            <state relative-caret-position="594">
+              <caret line="79" column="166" lean-forward="false" selection-start-line="79" selection-start-column="166" selection-end-line="79" selection-end-column="166" />
               <folding>
-                <marker date="1522094323497" expanded="true" signature="1420:1468" ph="SELECT * FRO... hospitaldept" />
-                <marker date="1522094323497" expanded="true" signature="1815:1836" ph="SELECT name test" />
-                <marker date="1522094323497" expanded="true" signature="2478:2565" ph="INSERT INTO donor... " />
-                <marker date="1522094323497" expanded="true" signature="2635:2731" ph="INSERT INTO recipients... " />
-                <marker date="1522094323497" expanded="true" signature="3084:3122" ph="SELECT * FRO... donor" />
-                <marker date="1522094323497" expanded="true" signature="3160:3290" ph="SELECT donat... " />
-                <marker date="1522094323497" expanded="true" signature="3336:3383" ph="SELECT * FRO... recipients" />
-                <marker date="1522094323497" expanded="true" signature="3421:3569" ph="SELECT trans... " />
+                <marker date="1522095824683" expanded="true" signature="1420:1468" ph="SELECT * FRO... hospitaldept" />
+                <marker date="1522095824683" expanded="true" signature="1945:1994" ph="SELECT * FRO... bloodcapacity" />
+                <marker date="1522095824683" expanded="true" signature="2060:2129" ph="SELECT * FRO... bloodcapacity" />
+                <marker date="1522095824683" expanded="true" signature="2113:2129" ph="SELECT blood... recipients" />
+                <marker date="1522095824683" expanded="true" signature="2182:2305" ph="SELECT * FRO... bloodcapacity" />
+                <marker date="1522095824683" expanded="true" signature="2249:2304" ph="SELECT blood... recipients" />
+                <marker date="1522095824683" expanded="true" signature="2574:2595" ph="SELECT name test" />
+                <marker date="1522095824683" expanded="true" signature="3237:3324" ph="INSERT INTO donor... " />
+                <marker date="1522095824683" expanded="true" signature="3394:3490" ph="INSERT INTO recipients... " />
+                <marker date="1522095824683" expanded="true" signature="3843:3881" ph="SELECT * FRO... donor" />
+                <marker date="1522095824683" expanded="true" signature="3919:4049" ph="SELECT donat... " />
+                <marker date="1522095824683" expanded="true" signature="4095:4142" ph="SELECT * FRO... recipients" />
+                <marker date="1522095824683" expanded="true" signature="4180:4328" ph="SELECT trans... " />
               </folding>
             </state>
           </provider>
@@ -38,48 +41,18 @@
       <file leaf-file-name="searchHA2.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/searchHA2.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
+            <state relative-caret-position="-150">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="searchHA.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="searchHA.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/searchHA.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="537">
-              <caret line="59" column="48" lean-forward="false" selection-start-line="59" selection-start-column="48" selection-end-line="59" selection-end-column="48" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="searchUser.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/searchUser.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="468">
-              <caret line="62" column="16" lean-forward="true" selection-start-line="62" selection-start-column="16" selection-end-line="65" selection-end-column="25" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="landing.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/landing.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="393">
-              <caret line="60" column="45" lean-forward="false" selection-start-line="60" selection-start-column="45" selection-end-line="60" selection-end-column="45" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="searchAdmin.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/searchAdmin.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="786">
-              <caret line="75" column="29" lean-forward="true" selection-start-line="75" selection-start-column="29" selection-end-line="75" selection-end-column="29" />
+            <state relative-caret-position="447">
+              <caret line="63" column="80" lean-forward="false" selection-start-line="63" selection-start-column="80" selection-end-line="63" selection-end-column="80" />
               <folding />
             </state>
           </provider>
@@ -101,10 +74,10 @@
       <list>
         <option value="$PROJECT_DIR$/templates/index.html" />
         <option value="$PROJECT_DIR$/templates/searchUser.html" />
-        <option value="$PROJECT_DIR$/templates/searchHA.html" />
         <option value="$PROJECT_DIR$/templates/landing.html" />
         <option value="$PROJECT_DIR$/templates/searchAdmin.html" />
         <option value="$PROJECT_DIR$/server.py" />
+        <option value="$PROJECT_DIR$/templates/searchHA.html" />
       </list>
     </option>
   </component>
@@ -550,10 +523,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/searchHA.html">
+    <entry file="file://$PROJECT_DIR$/templates/searchUser.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="537">
-          <caret line="59" column="48" lean-forward="false" selection-start-line="59" selection-start-column="48" selection-end-line="59" selection-end-column="48" />
+        <state relative-caret-position="468">
+          <caret line="62" column="16" lean-forward="true" selection-start-line="62" selection-start-column="16" selection-end-line="65" selection-end-column="25" />
           <folding />
         </state>
       </provider>
@@ -566,22 +539,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/searchHA2.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/searchUser.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="468">
-          <caret line="62" column="16" lean-forward="true" selection-start-line="62" selection-start-column="16" selection-end-line="65" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/searchAdmin.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="786">
@@ -590,20 +547,41 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/templates/searchHA2.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-150">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/server.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="102" column="0" lean-forward="true" selection-start-line="102" selection-start-column="0" selection-end-line="102" selection-end-column="0" />
+        <state relative-caret-position="594">
+          <caret line="79" column="166" lean-forward="false" selection-start-line="79" selection-start-column="166" selection-end-line="79" selection-end-column="166" />
           <folding>
-            <marker date="1522094323497" expanded="true" signature="1420:1468" ph="SELECT * FRO... hospitaldept" />
-            <marker date="1522094323497" expanded="true" signature="1815:1836" ph="SELECT name test" />
-            <marker date="1522094323497" expanded="true" signature="2478:2565" ph="INSERT INTO donor... " />
-            <marker date="1522094323497" expanded="true" signature="2635:2731" ph="INSERT INTO recipients... " />
-            <marker date="1522094323497" expanded="true" signature="3084:3122" ph="SELECT * FRO... donor" />
-            <marker date="1522094323497" expanded="true" signature="3160:3290" ph="SELECT donat... " />
-            <marker date="1522094323497" expanded="true" signature="3336:3383" ph="SELECT * FRO... recipients" />
-            <marker date="1522094323497" expanded="true" signature="3421:3569" ph="SELECT trans... " />
+            <marker date="1522095824683" expanded="true" signature="1420:1468" ph="SELECT * FRO... hospitaldept" />
+            <marker date="1522095824683" expanded="true" signature="1945:1994" ph="SELECT * FRO... bloodcapacity" />
+            <marker date="1522095824683" expanded="true" signature="2060:2129" ph="SELECT * FRO... bloodcapacity" />
+            <marker date="1522095824683" expanded="true" signature="2113:2129" ph="SELECT blood... recipients" />
+            <marker date="1522095824683" expanded="true" signature="2182:2305" ph="SELECT * FRO... bloodcapacity" />
+            <marker date="1522095824683" expanded="true" signature="2249:2304" ph="SELECT blood... recipients" />
+            <marker date="1522095824683" expanded="true" signature="2574:2595" ph="SELECT name test" />
+            <marker date="1522095824683" expanded="true" signature="3237:3324" ph="INSERT INTO donor... " />
+            <marker date="1522095824683" expanded="true" signature="3394:3490" ph="INSERT INTO recipients... " />
+            <marker date="1522095824683" expanded="true" signature="3843:3881" ph="SELECT * FRO... donor" />
+            <marker date="1522095824683" expanded="true" signature="3919:4049" ph="SELECT donat... " />
+            <marker date="1522095824683" expanded="true" signature="4095:4142" ph="SELECT * FRO... recipients" />
+            <marker date="1522095824683" expanded="true" signature="4180:4328" ph="SELECT trans... " />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/searchHA.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="447">
+          <caret line="63" column="80" lean-forward="false" selection-start-line="63" selection-start-column="80" selection-end-line="63" selection-end-column="80" />
+          <folding />
         </state>
       </provider>
     </entry>

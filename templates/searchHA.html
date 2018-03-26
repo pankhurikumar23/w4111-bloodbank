@@ -57,19 +57,18 @@
         <div class="col-lg-12 text-center">
           <h2 class="mt-5">w4111 - Blood Donation Manager</h2>
           <p class="lead">I'm a hospital Administrator. I can choose and query the database accordingly then: </p>
-            <form method="GET" action="/searchHA">
+            <form method="GET" action="/searchHA2">
                 <p class="lead">  Enter the following : <br>
                 Today's Date:<input type="Date" name="date"></p>
                 <p class="lead">Hospital ID: <input type="text" name="hid"></p>
-                <p class="lead">Department ID: <input type="text" name="did"></p>
                 <p class="lead">Recipient ID: <input type="text" name="rid"></p>
-                <p class="lead">No. of Units: <input type="number" name="units"></p>
                 <!-- Drop down list of possible queries? -->
                 Choose the operation/query you want: <br>
                 <p>
                   <select name="avail">
                       <option value="check">Blood Availability</option>
                       <option value="history">Recipient History</option>
+                      <option value="available">Recipient Blood Availability</option>
                   </select>
                   <input type="submit" value="GO.">
                 </p>

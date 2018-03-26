@@ -65,7 +65,27 @@ def hospiAdmin():
   context = dict(data=results)
   return render_template("searchHA.html", **context)
 
+@app.route('/searchHA2')
+def findDetails():
+  hid = request.args['hid']
+  did = request.args['did']
+  rid = request.args['rid']
+  option = request.args['avail']
 
+  if option == 'check':
+    cursor = g.conn.execute("SELECT * FROM bloodcapacity WHERE hospitalID = %s;", hid)
+  elif option == 'history':
+    cursor = g.conn.execute("SELECT * FROM transfusions WHERE hospitalID = %s AND recipientID = %s;", (hid, rid))
+  else:
+    cursor = g.conn.execute("SELECT * FROM bloodcapacity WHERE hospitalID = %s AND bloodtype = (SELECT bloodType FROM recipients WHERE recipientID = %s)", (hid, rid))
+
+  results = []
+  for result in cursor:
+    results.append(result)
+  cursor.close()
+
+  context = dict(data=results)
+  return render_template("searchHA2.html", **context)
 
 @app.route('/index')
 def index():
