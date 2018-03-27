@@ -55,7 +55,7 @@ def hospiAdmin():
   id = request.args['eid']
   cursor = g.conn.execute("SELECT * FROM hospitaldept where employeeid = %s;", id)
   results = []
-  results.append("Hospital Dept. details: ")
+  results.append("Hospital ID, Department ID, Admin ID, Admin since:")
   for result in cursor:
     hID = result[0]
     dID = result[1]
@@ -68,18 +68,33 @@ def hospiAdmin():
 @app.route('/searchHA2')
 def findDetails():
   hid = request.args['hid']
-  did = request.args['did']
   rid = request.args['rid']
   option = request.args['avail']
 
+  results = []
+
   if option == 'check':
     cursor = g.conn.execute("SELECT * FROM bloodcapacity WHERE hospitalID = %s;", hid)
+    results.append("Hospital ID, Blood type, Units of Blood:")
   elif option == 'history':
     cursor = g.conn.execute("SELECT * FROM transfusions WHERE hospitalID = %s AND recipientID = %s;", (hid, rid))
-  else:
+    results.append("Transfusion ID, Request ID, Recipient ID, Hospital ID, Units of Blood, Date:")
+  elif option == 'available':
     cursor = g.conn.execute("SELECT * FROM bloodcapacity WHERE hospitalID = %s AND bloodtype = (SELECT bloodType FROM recipients WHERE recipientID = %s)", (hid, rid))
+    results.append("Units of Blood:")
+  elif option == 'internal':
+    cursor = g.conn.execute("SELECT * FROM internalrequest WHERE hospitalID = %s", hid)
+    results.append("Request ID, Blood type, Units of Blood, Department ID, Hospital ID")
+  else:
+    cursor1 = g.conn.execute("SELECT * FROM transfers WHERE fromID = %s", hid)
+    results.append("Transfer ID, From ID, To ID, Blood Type, Units")
+    results.append("Transferred To: ")
+    for result in cursor1:
+        results.append(result)
+    cursor1.close()
+    cursor = g.conn.execute("SELECT * FROM transfers WHERE toID = %s", hid)
+    results.append("Received From: ")
 
-  results = []
   for result in cursor:
     results.append(result)
   cursor.close()
@@ -139,13 +154,14 @@ def searchUser():
     cursor1 = g.conn.execute("SELECT * FROM recipients WHERE recipientID = %s;", id)
     cursor2 = g.conn.execute("SELECT transfusionID, unitsTransfused, hospitalID, date FROM recipients R, transfusions T WHERE R.recipientID = T.recipientID AND R.recipientID = %s;", id)
   results = []
+  results.append("ID, Blood Type, Name, Address, Phone: ")
   for result in cursor1:
     newRow = []
     for item in result:
       newRow.append(item)
     results.append(newRow) # can also be accessed using result[0]
   cursor1.close()
-  results.append("Donations Given/Transfusions Received: ")
+  results.append("Transaction ID, Units of Blood, Institution ID, Date: ")
   for result in cursor2:
     newRow = []
     for item in result:

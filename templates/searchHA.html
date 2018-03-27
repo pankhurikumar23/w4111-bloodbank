@@ -62,13 +62,15 @@
                 Today's Date:<input type="Date" name="date"></p>
                 <p class="lead">Hospital ID: <input type="text" name="hid"></p>
                 <p class="lead">Recipient ID: <input type="text" name="rid"></p>
-                <!-- Drop down list of possible queries? -->
+                <!-- Drop down list of possible queries -->
                 Choose the operation/query you want: <br>
                 <p>
                   <select name="avail">
                       <option value="check">Blood Availability</option>
                       <option value="history">Recipient History</option>
                       <option value="available">Recipient Blood Availability</option>
+                      <option value="internal">Internal Department Requests</option>
+                      <option value="transfer">External Transfers</option>
                   </select>
                   <input type="submit" value="GO.">
                 </p>
