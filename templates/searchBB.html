@@ -36,7 +36,7 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
       <div class="container">
-        <a class="navbar-brand" href="#">Blood Donations</a>
+        <a class="navbar-brand" href="/">Blood Donations</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -56,42 +56,40 @@
       <div class="row">
         <div class="col-lg-12 text-center">
           <h2 class="mt-5">w4111 - Blood Donation Manager</h2>
-          <p class="lead">I'm a hospital Administrator. I can choose and query the database accordingly then: </p>
-            <form method="GET" action="/searchHA2">
-                <p class="lead">  Enter the following : <br>
-                Today's Date:<input type="Date" name="date"></p>
-                <p class="lead">Hospital ID: <input type="text" name="hid"></p>
-                <p class="lead">Recipient ID: <input type="text" name="rid"></p>
-                <!-- Drop down list of possible queries -->
-                Choose the operation/query you want: <br>
+          <p class="lead">I'm a Blood bank Administrator. I can choose and query the database accordingly then:</p>
+
+            <form method="GET" action="/searchUser">
+                <p class="lead">Date:<input type="Date" name="date"></p>
+                <p class="lead">Donor ID:<input type="text" name="did"></p>
+                <p class="lead">Blood Type:<input type="text" name="btype"></p>
+                <p class="lead">Units:<input type="number" name="units"></p>
+                <!-- Drop down list of possible queries may not be needed for blood bank manager right? -->
+                Choose the operation/query you want: <br>               
                 <p>
-                  <select name="avail">
-                      <option value="check">Blood Availability</option>
-                      <option value="history">Recipient History</option>
-                      <option value="available">Recipient Blood Availability</option>
-                      <option value="internal">Internal Department Requests</option>
-                      <option value="transfer">External Transfers</option>
-                  </select>
-                  <input type="submit" value="GO.">
+                  <input type="submit" value="Add to DB">
+                  <input type="submit" value="Get Status">
                 </p>
             </form>
             <br>
             <p class="lead">
             Results: <br>
             <textarea name="results" rows="10" cols="100">
-                {% for n in data %}
-                    {{n}}
-                {% endfor %}
+            (query results will be displayed here)
             </textarea>
             </p>
+          </div>
         </div>
+      </div>
+
+
+        <footer>
         <div class="col-lg-12 text-center">
             <ul class="list-unstyled">
                 <li>Shreya Vaidyanathan and Pankhuri Kumar © 2018.</li>
             </ul>
         </div>
-      </div>
-    </div>
+      </footer>
+      
   </body>
 
 </html>
