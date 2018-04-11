@@ -13,7 +13,7 @@ Implementing the advanced features (mostly object-relational) of the PostgresSQL
 **-> Design changes to existing schema are as follows:-**
   1. ***Composite type:***
       - Created 'contact_details' with two fields (Phno VARCHAR, addr VARCHAR) as a type. 
-        - Used the new composite data type in our existing database by appending to the donor and recipients table, and dropped the separate 'phone' and 'address' columns. The two fields have been set to NOT NULL to ensure data integrity of the original table is maintained.
+        - Used the new composite data type in our existing database by appending to the donor and recipients table, and dropped the separate 'phone' and 'address' columns. The combined field is set to NOT NULL to ensure data integrity of the original table is maintained.
   2. ***Arrays***:
       - Created a new array of integers called 'bloodquantity' of size 8 - It helps map the blood type to quantity. 
         - | 0  | 1    |  2   |   3   |   4   |   5   |    6  |    7  |
